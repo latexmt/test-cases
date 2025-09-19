@@ -1,0 +1,306 @@
+\documentclass[11pt]{article}
+
+% Ändern Sie "review" in "final", um die endgültige (manchmal Kamera-fertige) Version zu erzeugen.
+% Ändern Sie zu "preprint", um eine nicht-anonyme Version mit Seitenzahlen zu erstellen.
+\usepackage[review]{acl}
+
+% Standard-Pakete
+\usepackage{times}
+\usepackage{latexsym}
+
+% Für korrekte Darstellung und Silbentrennung von Wörtern mit lateinischen Zeichen (auch in Bib-Dateien)
+\usepackage[T1]{fontenc}
+% Für vietnamesische Zeichen
+% \usepackage[T5]{fontenc}
+% Siehe https://www.latex-project.org/help/documentation/encguide.pdf für andere Zeichensätze
+
+% Dies setzt voraus, dass Ihre Dateien als UTF8 codiert sind
+\usepackage[utf8]{inputenc}
+
+% Dies ist nicht zwingend notwendig und kann auskommentiert werden,
+% aber es verbessert das Layout des Manuskripts
+% und spart typischerweise Platz.
+\usepackage{microtype}
+
+% Ebenfalls nicht zwingend notwendig, kann aber auskommentiert werden.
+% Es verbessert jedoch die Ästhetik der Schreibmaschinenschrift.
+\usepackage{inconsolata}
+
+% Das Einfügen von Bildern in Ihr LaTeX-Dokument erfordert zusätzliche Pakete
+\usepackage{graphicx}
+
+% Wenn Titel- und Autoreninformationen nicht in den vorgesehenen Bereich passen, heben Sie die folgende Auskommentierung auf
+%
+%\setlength\titlebox{<dim>}
+%
+% und setzen Sie <dim> auf einen Wert von 5cm oder mehr.
+
+\title{Anweisungen für *ACL-Proceedings}
+
+% Autoreninformationen können in verschiedenen Stilen angegeben werden:
+% Für mehrere Autoren derselben Institution:
+% \author{Autor 1 \and ... \and Autor n \\
+%         Adresszeile \\ ... \\ Adresszeile}
+% Falls die Namen nicht gut in eine Zeile passen, verwenden Sie:
+%         Autor 1 \\ {\bf Autor 2} \\ ... \\ {\bf Autor n} \\
+% Für Autoren verschiedener Institutionen:
+% \author{Autor 1 \\ Adresszeile \\  ... \\ Adresszeile
+%         \And  ... \And
+%         Autor n \\ Adresszeile \\ ... \\ Adresszeile}
+% Um eine separate „Reihe“ von Autoren zu beginnen, verwenden Sie \AND, wie in:
+% \author{Autor 1 \\ Adresszeile \\  ... \\ Adresszeile
+%         \AND
+%         Autor 2 \\ Adresszeile \\ ... \\ Adresszeile \And
+%         Autor 3 \\ Adresszeile \\ ... \\ Adresszeile}
+
+\author{Erster Autor \\
+  Zugehörigkeit / Adresszeile 1 \\
+  Zugehörigkeit / Adresszeile 2 \\
+  Zugehörigkeit / Adresszeile 3 \\
+  \texttt{email@domain} \\\And
+  Zweiter Autor \\
+  Zugehörigkeit / Adresszeile 1 \\
+  Zugehörigkeit / Adresszeile 2 \\
+  Zugehörigkeit / Adresszeile 3 \\
+  \texttt{email@domain} \\}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Dieses Dokument ist eine Ergänzung zu den allgemeinen Anweisungen für *ACL-Autoren. Es enthält Anweisungen zur Verwendung der \LaTeX{}-Stildateien für ACL-Konferenzen.
+Das Dokument selbst entspricht seinen eigenen Spezifikationen und dient daher als Beispiel dafür, wie Ihr Manuskript aussehen sollte.
+Diese Anweisungen sind sowohl für eingereichte Beiträge zur Begutachtung als auch für die endgültigen Versionen angenommener Arbeiten zu verwenden.
+\end{abstract}
+
+\section{Einleitung}
+
+Diese Anweisungen sind für Autoren gedacht, die Beiträge für *ACL-Konferenzen mit \LaTeX{} einreichen. Sie sind nicht eigenständig. Alle Autoren müssen den allgemeinen Anweisungen für *ACL-Proceedings folgen,\footnote{\url{http://acl-org.github.io/ACLPUB/formatting.html}} und dieses Dokument enthält zusätzliche Anweisungen für die \LaTeX{}-Stildateien.
+
+Die Vorlagen enthalten den \LaTeX{}-Quelltext dieses Dokuments (\texttt{acl\_latex.tex}),
+die zum Formatieren verwendete \LaTeX{}-Stildatei (\texttt{acl.sty}),
+einen ACL-Bibliographie-Stil (\texttt{acl\_natbib.bst}),
+eine Beispielbibliographie (\texttt{custom.bib})
+und die Bibliographie für die ACL Anthology (\texttt{anthology.bib}).
+
+\section{Engines}
+
+Zum Erstellen einer PDF-Datei wird pdf\LaTeX{} dringend empfohlen (statt ursprünglichem \LaTeX{} plus dvips+ps2pdf oder dvipdf).
+Die Stildatei \texttt{acl.sty} kann auch mit
+lua\LaTeX{} und
+Xe\LaTeX{} verwendet werden, die sich besonders für Texte in nicht-lateinischen Schriften eignen.
+Die Datei \texttt{acl\_lualatex.tex} in diesem Repository bietet
+ein Beispiel für die Verwendung von \texttt{acl.sty} mit
+lua\LaTeX{} oder
+Xe\LaTeX{}.
+
+\section{Präambel}
+
+Die erste Zeile der Datei muss lauten:
+\begin{quote}
+\begin{verbatim}
+\documentclass[11pt]{article}
+\end{verbatim}
+\end{quote}
+
+Um die Stildatei in der Review-Version zu laden:
+\begin{quote}
+\begin{verbatim}
+\usepackage[review]{acl}
+\end{verbatim}
+\end{quote}
+Für die endgültige Version lassen Sie die Option \verb|review| weg:
+\begin{quote}
+\begin{verbatim}
+\usepackage{acl}
+\end{verbatim}
+\end{quote}
+
+Um Times Roman zu verwenden, fügen Sie Folgendes in die Präambel ein:
+\begin{quote}
+\begin{verbatim}
+\usepackage{times}
+\end{verbatim}
+\end{quote}
+(Alternativen wie txfonts oder newtx sind ebenfalls akzeptabel.)
+
+Bitte sehen Sie den \LaTeX{}-Quelltext dieses Dokuments für Kommentare zu anderen nützlichen Paketen.
+
+Titel und Autoren werden mit \verb|\title| und \verb|\author| gesetzt. Innerhalb der Autorenliste formatieren Sie mehrere Autoren mit \verb|\and|, \verb|\And| und \verb|\AND|; siehe den Quelltext für Beispiele.
+
+Standardmäßig ist der Kasten mit Titel und Autoren auf mindestens 5 cm eingestellt. Wenn Sie mehr Platz benötigen, fügen Sie Folgendes in die Präambel ein:
+\begin{quote}
+\begin{verbatim}
+\setlength\titlebox{<dim>}
+\end{verbatim}
+\end{quote}
+wobei \verb|<dim>| durch eine Länge ersetzt wird. Setzen Sie diesen Wert nicht kleiner als 5 cm.
+
+\section{Dokumenttext}
+
+\subsection{Fußnoten}
+
+Fußnoten werden mit dem Befehl \verb|\footnote| eingefügt.\footnote{Dies ist eine Fußnote.}
+
+\subsection{Tabellen und Abbildungen}
+
+Siehe Tabelle~\ref{tab:accents} für ein Beispiel einer Tabelle und ihrer Beschriftung.
+\textbf{Ändern Sie nicht die Standardgrößen der Beschriftungen.}
+
+\begin{table}
+  \centering
+  \begin{tabular}{lc}
+    \hline
+    \textbf{Befehl} & \textbf{Ausgabe} \\
+    \hline
+    \verb|{\"a}|     & {\"a}           \\
+    \verb|{\^e}|     & {\^e}           \\
+    \verb|{\`i}|     & {\`i}           \\
+    \verb|{\.I}|     & {\.I}           \\
+    \verb|{\o}|      & {\o}            \\
+    \verb|{\'u}|     & {\'u}           \\
+    \verb|{\aa}|     & {\aa}           \\\hline
+  \end{tabular}
+  \begin{tabular}{lc}
+    \hline
+    \textbf{Befehl} & \textbf{Ausgabe} \\
+    \hline
+    \verb|{\c c}|    & {\c c}          \\
+    \verb|{\u g}|    & {\u g}          \\
+    \verb|{\l}|      & {\l}            \\
+    \verb|{\~n}|     & {\~n}           \\
+    \verb|{\H o}|    & {\H o}          \\
+    \verb|{\v r}|    & {\v r}          \\
+    \verb|{\ss}|     & {\ss}           \\
+    \hline
+  \end{tabular}
+  \caption{Beispielbefehle für Akzentzeichen, z.\,B. für Bib\TeX{}-Einträge.}
+  \label{tab:accents}
+\end{table}
+
+Soweit möglich, sollten die Schriftarten in Abbildungen den Dokument-Schriften entsprechen. Siehe Abbildung~\ref{fig:experiments} für ein Beispiel einer Abbildung und Beschriftung.
+
+Mit dem Paket \verb|graphicx| können Grafikdateien in einer figure-Umgebung an geeigneter Stelle eingefügt werden.
+Das Paket \verb|graphicx| unterstützt verschiedene optionale Argumente zur Steuerung des Erscheinungsbilds der Abbildung.
+Sie müssen es explizit in der Präambel einfügen, nach der
+\verb|\documentclass|-Deklaration und vor \verb|\begin{document}|, mit
+\verb|\usepackage{graphicx}|.
+
+\begin{figure}[t]
+  \includegraphics[width=\columnwidth]{example-image-golden}
+  \caption{Eine Abbildung mit einer Beschriftung, die über mehrere Zeilen läuft.
+    Das Beispielbild ist in der Regel über das Paket \texttt{mwe} verfügbar,
+    ohne es in der Präambel erwähnen zu müssen.}
+  \label{fig:experiments}
+\end{figure}
+
+\begin{figure*}[t]
+  \includegraphics[width=0.48\linewidth]{example-image-a} \hfill
+  \includegraphics[width=0.48\linewidth]{example-image-b}
+  \caption {Ein minimales Arbeitsbeispiel, das zeigt,
+    wie zwei Bilder nebeneinander platziert werden.}
+\end{figure*}
+
+\subsection{Hyperlinks}
+
+Benutzer älterer \LaTeX{}-Versionen könnten auf den folgenden Fehler stoßen:
+\begin{quote}
+\verb|\pdfendlink| landete in einer anderen Verschachtelungsebene als \verb|\pdfstartlink|.
+\end{quote}
+Dies geschieht, wenn pdf\LaTeX{} verwendet wird und ein Zitat über eine Seitenbegrenzung hinausgeht. Die beste Lösung ist ein Upgrade auf \LaTeX{} 2018-12-01 oder neuer.
+
+\subsection{Zitate}
+
+% (Übersetzungen für die Tabelle und erklärenden Text)
+\begin{table*}
+  \centering
+  \begin{tabular}{lll}
+    \hline
+    \textbf{Ausgabe}           & \textbf{natbib-Befehl} & \textbf{Nur-ACL-Befehl} \\
+    \hline
+    \citep{Gusfield:97}       & \verb|\citep|           &                           \\
+    \citealp{Gusfield:97}     & \verb|\citealp|         &                           \\
+    \citet{Gusfield:97}       & \verb|\citet|           &                           \\
+    \citeyearpar{Gusfield:97} & \verb|\citeyearpar|     &                           \\
+    \citeposs{Gusfield:97}    &                         & \verb|\citeposs|          \\
+    \hline
+  \end{tabular}
+  \caption{\label{citation-guide}
+    Von der Stildatei unterstützte Zitierbefehle.
+    Der Stil basiert auf dem natbib-Paket und unterstützt alle natbib-Befehle.
+    Außerdem unterstützt er ältere ACL-Befehle zur Kompatibilität.
+  }
+\end{table*}
+
+Tabelle~\ref{citation-guide} zeigt die von den Stildateien unterstützte Syntax.
+Wir empfehlen die Verwendung der natbib-Stile.
+Mit dem Befehl \verb|\citet| erhalten Sie Zitate im Format „Autor (Jahr)“, z.\,B. \citet{Gusfield:97}.
+Mit \verb|\citep| erhalten Sie „(Autor, Jahr)“-Zitate \citep{Gusfield:97}.
+Mit \verb|\citealp| (Alternative ohne Klammern) erhalten Sie „Autor, Jahr“-Zitate, nützlich in Klammern (z.\,B. \citealp{Gusfield:97}).
+
+Ein besitzanzeigendes Zitat kann mit \verb|\citeposs| erstellt werden. Dies ist kein Standard-natbib-Befehl und möglicherweise nicht mit anderen Stilen kompatibel.
+
+\subsection{Literaturverzeichnis}
+
+Die \LaTeX{}- und Bib\TeX{}-Stildateien folgen grob dem APA-Format.
+Wenn Ihre Bib-Datei \texttt{custom.bib} heißt, erzeugen Sie den Literaturabschnitt mit:
+\begin{quote}
+\begin{verbatim}
+\bibliography{custom}
+\end{verbatim}
+\end{quote}
+
+Für Anthology und eigene .bib-Datei:
+\begin{quote}
+\begin{verbatim}
+\bibliography{anthology,custom}
+\end{verbatim}
+\end{quote}
+
+\subsection{Gleichungen}
+
+Ein Beispiel für eine Gleichung:
+\begin{equation}
+  \label{eq:example}
+  A = \pi r^2
+\end{equation}
+
+Dies ist ein Beispielverweis auf Gleichung~\ref{eq:example}.
+
+\subsection{Anhänge}
+
+Verwenden Sie \verb|\appendix| vor jedem Anhang, um die Nummerierung auf Buchstaben umzustellen. Siehe Anhang~\ref{sec:appendix} für ein Beispiel.
+
+\section*{Einschränkungen}
+
+Dieses Dokument behandelt nicht die Inhaltsanforderungen für ACL oder andere Veranstaltungen. Prüfen Sie die Autorenanweisungen für Informationen zu maximalen Seitenlängen, den erforderlichen Abschnitt „Einschränkungen“ usw.
+
+\section*{Danksagungen}
+
+Dieses Dokument wurde von Steven Bethard, Ryan Cotterell und Rui Yan
+auf Basis früherer ACL- und NAACL-Anweisungen angepasst, einschließlich
+ACL 2019 (Douwe Kiela und Ivan Vuli\'{c}),
+NAACL 2019 (Stephanie Lukin und Alla Roskovskaya),
+ACL 2018 (Shay Cohen, Kevin Gimpel und Wei Lu),
+NAACL 2018 (Margaret Mitchell und Stephanie Lukin),
+Bib\TeX{}-Vorschlägen für (NA)ACL 2017/2018 (Jason Eisner),
+ACL 2017 (Dan Gildea und Min-Yen Kan),
+NAACL 2017 (Margaret Mitchell),
+ACL 2012 (Maggie Li und Michael White),
+ACL 2010 (Jing-Shin Chang und Philipp Koehn),
+ACL 2008 (Johanna D. Moore, Simone Teufel, James Allan und Sadaoki Furui),
+ACL 2005 (Hwee Tou Ng und Kemal Oflazer),
+ACL 2002 (Eugene Charniak und Dekang Lin),
+sowie früheren ACL- und EACL-Formaten mehrerer Autoren, darunter
+John Chen, Henry S. Thompson und Donald Walker.
+Weitere Elemente stammen aus den Formatierungsanweisungen der \emph{International Joint Conference on Artificial Intelligence} und der \emph{Conference on Computer Vision and Pattern Recognition}.
+
+\bibliography{custom}
+
+\appendix
+
+\section{Beispielanhang}
+\label{sec:appendix}
+
+Dies ist ein Anhang.
+
+\end{document}

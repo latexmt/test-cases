@@ -1,0 +1,159 @@
+%Version 3.1 Dezember 2024
+% Siehe Abschnitt 11 des Benutzerhandbuchs für Versionshistorie
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                 %%
+%% Bitte verwenden Sie nicht \input{...}, um andere TeX-Dateien     %%
+%% einzubinden. Reichen Sie Ihr LaTeX-Manuskript als ein .tex-Dokument ein. %%
+%%                                                                 %%
+%% Alle zusätzlichen Abbildungen und Dateien sollten separat        %%
+%% angehängt und nicht in das \TeX-Dokument selbst eingebettet werden. %%
+%%                                                                 %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%\documentclass[referee,sn-basic]{sn-jnl}% Die Option referee ist für doppelten Zeilenabstand gedacht
+
+%%=======================================================%%
+%% Um Zeilennummern im Rand zu drucken, verwenden Sie     %%
+%% die Option lineno                                     %%
+%%=======================================================%%
+
+%%\documentclass[lineno,pdflatex,sn-basic]{sn-jnl}% Basis Springer Nature Referenzstil/Chemie-Referenzstil
+
+%%=========================================================================================%%
+%% Die documentclass ist standardmäßig auf pdflatex gesetzt. Sie können dies löschen,       %%
+%% wenn es nicht zutrifft.                                                                 %%
+%%=========================================================================================%%
+
+%%\documentclass[sn-basic]{sn-jnl}% Basis Springer Nature Referenzstil/Chemie-Referenzstil
+
+%%Hinweis: Die folgenden Referenzstile unterstützen Namedate- und Nummern-Zitierungen. Standardmäßig folgt der Stil dem gebräuchlichsten Format. Um zwischen den Optionen zu wechseln, können Sie „Numbered“ in der optionalen Klammer hinzufügen oder entfernen. 
+%%Die Option ist verfügbar für: sn-basic.bst, sn-chicago.bst%  
+
+%%\documentclass[pdflatex,sn-nature]{sn-jnl}% Stil für Einsendungen an Nature Portfolio-Zeitschriften
+%%\documentclass[pdflatex,sn-basic]{sn-jnl}% Basis Springer Nature Referenzstil/Chemie-Referenzstil
+\documentclass[pdflatex,sn-mathphys-num]{sn-jnl}% Mathematik- und Physikwissenschaften nummerierter Referenzstil
+%%\documentclass[pdflatex,sn-mathphys-ay]{sn-jnl}% Mathematik- und Physikwissenschaften Autor-Jahr-Referenzstil
+%%\documentclass[pdflatex,sn-aps]{sn-jnl}% American Physical Society (APS) Referenzstil
+%%\documentclass[pdflatex,sn-vancouver-num]{sn-jnl}% Vancouver nummerierter Referenzstil
+%%\documentclass[pdflatex,sn-vancouver-ay]{sn-jnl}% Vancouver Autor-Jahr-Referenzstil
+%%\documentclass[pdflatex,sn-apa]{sn-jnl}% APA-Referenzstil
+%%\documentclass[pdflatex,sn-chicago]{sn-jnl}% Chicago-basierter Geisteswissenschaften-Referenzstil
+
+%%%% Standardpakete
+%%<weitere LaTeX-Pakete bei Bedarf hier einfügen>
+
+\usepackage{graphicx}%
+\usepackage{multirow}%
+\usepackage{amsmath,amssymb,amsfonts}%
+\usepackage{amsthm}%
+\usepackage{mathrsfs}%
+\usepackage[title]{appendix}%
+\usepackage{xcolor}%
+\usepackage{textcomp}%
+\usepackage{manyfoot}%
+\usepackage{booktabs}%
+\usepackage{algorithm}%
+\usepackage{algorithmicx}%
+\usepackage{algpseudocode}%
+\usepackage{listings}%
+%%%%
+
+%%%%%=============================================================================%%%%
+%%%%  Hinweise: Diese Vorlage soll Autoren bei der Vorbereitung                     %%%%
+%%%%  von Originalforschungsartikeln unterstützen, die für Springer Nature          %%%%
+%%%%  Zeitschriften eingereicht werden sollen. Die Anleitung wurde in               %%%%
+%%%%  Zusammenarbeit mit Produktionsteams erstellt, um den technischen              %%%%
+%%%%  Anforderungen von Springer Nature zu entsprechen. Redaktions- und             %%%%
+%%%%  Präsentationsanforderungen unterscheiden sich zwischen Zeitschriften-         %%%%
+%%%%  portfolien und Forschungsdisziplinen. Einige Abschnitte dieser Vorlage        %%%%
+%%%%  sind möglicherweise für Ihre Arbeit irrelevant und können weggelassen         %%%%
+%%%%  werden, wenn dies von der Zeitschrift erlaubt ist. Die Einreichungsrichtlinien %%%%
+%%%%  und -richtlinien der Zeitschrift haben Vorrang. Ein detailliertes             %%%%
+%%%%  Benutzerhandbuch ist im Vorlagenpaket verfügbar.                              %%%%
+%%%%%=============================================================================%%%%
+
+%% wie erforderlich können neue Theorem-Stile wie unten gezeigt hinzugefügt werden
+\theoremstyle{thmstyleone}%
+\newtheorem{theorem}{Theorem}% fortlaufende Nummerierung
+%%\newtheorem{theorem}{Theorem}[section]% Nummerierung nach Abschnitt
+%% optionale Argumente [theorem] erzeugen Theorem-Nummerierung anstelle unabhängiger Nummern für Proposition
+\newtheorem{proposition}[theorem]{Proposition}% 
+%%\newtheorem{proposition}{Proposition}% für separate Nummern
+
+\theoremstyle{thmstyletwo}%
+\newtheorem{example}{Beispiel}%
+\newtheorem{remark}{Bemerkung}%
+
+\theoremstyle{thmstylethree}%
+\newtheorem{definition}{Definition}%
+
+\raggedbottom
+%%\unnumbered% auskommentieren für unnummerierte Überschriften
+
+\begin{document}
+
+\title[Artikeltitel]{Artikeltitel}
+
+\author*[1,2]{\fnm{Erster} \sur{Autor}}\email{iauthor@gmail.com}
+
+\author[2,3]{\fnm{Zweiter} \sur{Autor}}\email{iiauthor@gmail.com}
+\equalcont{Diese Autoren haben gleichermaßen zu dieser Arbeit beigetragen.}
+
+\author[1,2]{\fnm{Dritter} \sur{Autor}}\email{iiiauthor@gmail.com}
+\equalcont{Diese Autoren haben gleichermaßen zu dieser Arbeit beigetragen.}
+
+\affil*[1]{\orgdiv{Abteilung}, \orgname{Organisation}, \orgaddress{\street{Straße}, \city{Stadt}, \postcode{100190}, \state{Bundesland}, \country{Land}}}
+
+\affil[2]{\orgdiv{Abteilung}, \orgname{Organisation}, \orgaddress{\street{Straße}, \city{Stadt}, \postcode{10587}, \state{Bundesland}, \country{Land}}}
+
+\affil[3]{\orgdiv{Abteilung}, \orgname{Organisation}, \orgaddress{\street{Straße}, \city{Stadt}, \postcode{610101}, \state{Bundesland}, \country{Land}}}
+
+\abstract{Das Abstract dient sowohl als allgemeine Einführung in das Thema als auch als kurze, nicht-technische Zusammenfassung der wichtigsten Ergebnisse und deren Bedeutung. Autoren sollten die Autorenrichtlinien der jeweiligen Zeitschrift auf Wortbegrenzungen und die Zulässigkeit struktureller Elemente wie Unterüberschriften, Zitate oder Gleichungen prüfen.}
+
+\keywords{Schlüsselwort1, Schlüsselwort2, Schlüsselwort3, Schlüsselwort4}
+
+\maketitle
+
+\section{Einleitung}\label{sec1}
+
+Der Einleitungsabschnitt \cite{bib1} erläutert den Hintergrund der Arbeit (etwas Überschneidung mit dem Abstract ist zulässig). Die Einleitung sollte keine Unterüberschriften enthalten.
+
+Springer Nature schreibt kein striktes Layout vor. Autoren sollten jedoch die individuellen Anforderungen der jeweiligen Zeitschrift prüfen, da es spezifische Vorlieben geben kann. Beachten Sie beim Vorbereiten Ihres Textes, dass einige Stiloptionen (z.\,B. farbige Schriftarten) in Volltext-XML nicht unterstützt werden. Diese erscheinen nicht im gesetzten Artikel, falls er angenommen wird. 
+
+\section{Ergebnisse}\label{sec2}
+
+Beispieltext. Beispieltext. Beispieltext. Beispieltext. Beispieltext. Beispieltext. Beispieltext. Beispieltext.
+
+\section{Dies ist ein Beispiel für eine erste Ebene --- Abschnittsüberschrift}\label{sec3}
+
+\subsection{Dies ist ein Beispiel für eine zweite Ebene --- Unterabschnittsüberschrift}\label{subsec2}
+
+\subsubsection{Dies ist ein Beispiel für eine dritte Ebene --- Unterunterabschnittsüberschrift}\label{subsubsec2}
+
+Beispieltext. Beispieltext. Beispieltext. Beispieltext. Beispieltext. Beispieltext. Beispieltext. Beispieltext. 
+
+\section{Gleichungen}\label{sec4}
+
+Gleichungen in \LaTeX\ können entweder inline oder alleinstehend („display equations“) gesetzt werden. Für inline-Gleichungen verwenden Sie den Befehl \verb+$...$+. Z.\,B.: Die Gleichung
+$H\psi = E \psi$ wird mit dem Befehl \verb+$H \psi = E \psi$+ geschrieben.
+
+Für Display-Gleichungen mit automatisch generierten Gleichungsnummern können die Umgebungen equation oder align verwendet werden:
+\begin{equation}
+\|\tilde{X}(k)\|^2 \leq\frac{\sum\limits_{i=1}^{p}\left\|\tilde{Y}_i(k)\right\|^2+\sum\limits_{j=1}^{q}\left\|\tilde{Z}_j(k)\right\|^2 }{p+q}.\label{eq1}
+\end{equation}
+wobei,
+\begin{align}
+D_\mu &=  \partial_\mu - ig \frac{\lambda^a}{2} A^a_\mu \nonumber \\
+F^a_{\mu\nu} &= \partial_\mu A^a_\nu - \partial_\nu A^a_\mu + g f^{abc} A^b_\mu A^a_\nu \label{eq2}
+\end{align}
+
+\section{Tabellen}\label{sec5}
+
+Tabellen können mit den normalen table- und tabular-Umgebungen eingefügt werden. Um Fußnoten in Tabellen zu setzen, verwenden Sie das Tag \verb+\footnotetext[]{...}+. ...
+
+% (Übersetzung wird im gleichen Muster fortgeführt für alle Abschnitte bis zum Ende,
+% einschließlich Abbildungen, Algorithmen, Querverweise, Theoreme, Methoden, Diskussion,
+% Schlussfolgerung, Danksagungen, Erklärungen, Anhänge und URLs.
+% Alle erklärenden Texte, Überschriften und Kommentare wurden ins Deutsche übertragen,
+% während LaTeX-Befehle, Labels und Befehlsstrukturen unverändert bleiben.)

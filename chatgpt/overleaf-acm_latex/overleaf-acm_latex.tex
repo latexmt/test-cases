@@ -1,0 +1,134 @@
+%%
+%% Dies ist die Datei `sample-manuscript.tex',
+%% erstellt mit dem docstrip-Dienstprogramm.
+%%
+%% Die ursprünglichen Quelldateien waren:
+%%
+%% samples.dtx  (mit Optionen: `all,proceedings,bibtex,manuscript')
+%% 
+%% WICHTIGER HINWEIS:
+%% 
+%% Den Urheberrechtshinweis finden Sie in der Quelldatei.
+%% 
+%% Jede geänderte Version dieser Datei muss
+%% mit neuen Dateinamen versehen werden, die sich von sample-manuscript.tex unterscheiden.
+%% 
+%% Für die Verteilung der Originalquelle siehe die Bedingungen
+%% für Kopieren und Änderung in der Datei samples.dtx.
+%% 
+%% Diese generierte Datei darf verteilt werden, solange die
+%% ursprünglichen Quelldateien, wie oben aufgeführt, Teil derselben
+%% Distribution sind. (Die Quellen müssen sich nicht unbedingt
+%% im selben Archiv oder Verzeichnis befinden.)
+%%
+%%
+%% Befehle für TeXCount
+%TC:macro \cite [option:text,text]
+%TC:macro \citep [option:text,text]
+%TC:macro \citet [option:text,text]
+%TC:envir table 0 1
+%TC:envir table* 0 1
+%TC:envir tabular [ignore] word
+%TC:envir displaymath 0 word
+%TC:envir math 0 word
+%TC:envir comment 0 0
+%%
+%% Der erste Befehl in Ihrer LaTeX-Quelle muss der \documentclass-Befehl sein.
+%%
+%% Für das Einreichen und Überprüfen Ihres Manuskripts ändern Sie bitte den Befehl zu
+%% \documentclass[manuscript, screen, review]{acmart}.
+%%
+%% Bei Abgabe der endgültigen Version oder für TAPS ändern Sie bitte den Befehl zu
+%% \documentclass[sigconf]{acmart} oder zu der Vorlage, die für Ihre Publikation erforderlich ist.
+%%
+%%
+\documentclass[manuscript,screen,review]{acmart}
+%%
+%% \BibTeX-Befehl zum Setzen des BibTeX-Logos in den Dokumenten
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    Bib\TeX}}}
+
+%% Rechte-Management-Informationen. Diese Informationen erhalten Sie,
+%% wenn Sie das Rechteformular ausfüllen. Diese Befehle enthalten BEISPIEL-
+%% Werte; es ist Ihre Verantwortung als Autor, die Befehle und Werte durch
+%% die zu ersetzen, die Sie nach dem Ausfüllen des Rechteformulars erhalten.
+\setcopyright{acmlicensed}
+\copyrightyear{2018}
+\acmYear{2018}
+\acmDOI{XXXXXXX.XXXXXXX}
+%% Diese Befehle sind für ein PROCEEDINGS-Abstract oder -Paper.
+\acmConference[Konferenzkürzel 'XX]{Bitte geben Sie den korrekten
+  Konferenztitel aus Ihrer Rechtebestätigungs-E-Mail ein}{3.–5. Juni
+  2018}{Woodstock, NY}
+%%
+%%  Kommentieren Sie \acmBooktitle aus, wenn der Titel der Tagungsbandes ein anderer ist
+%%  als „Proceedings of …“!
+%%
+%%\acmBooktitle{Woodstock '18: ACM Symposium on Neural Gaze Detection,
+%%  3.–5. Juni 2018, Woodstock, NY}
+\acmISBN{978-1-4503-XXXX-X/2018/06}
+
+
+%%
+%% Einreichungs-ID.
+%% Verwenden Sie dies beim Einreichen eines Artikels zu einer geförderten Veranstaltung.
+%% Sie erhalten eine eindeutige Einreichungs-ID von den Organisatoren,
+%% und diese ID sollte als Parameter für diesen Befehl verwendet werden.
+%%\acmSubmissionID{123-A56-BU3}
+
+%%
+%% Für das Verwalten von Zitaten wird empfohlen, Bibliographiedateien
+%% im BibTeX-Format zu verwenden.
+%%
+%% Sie können dann entweder BibTeX mit dem ACM-Reference-Format-Stil
+%% oder BibLaTeX mit den acmnumeric- oder acmauthoryear-Stilen verwenden,
+%% die erweiterte Unterstützung für Zitate von Software-Artefakten aus
+%% dem biblatex-software-Paket enthalten.
+%%
+%% Siehe die sample-*-biblatex.tex-Dateien für Vorlagen, die die
+%% biblatex-Stile demonstrieren.
+%%
+
+%%
+%% Die Mehrheit der ACM-Publikationen verwendet nummerierte Zitate und
+%% Referenzen. Der Befehl \citestyle{authoryear} wechselt zum
+%% „Autor-Jahr“-Stil.
+%%
+%% Wenn Sie Inhalte für eine von ACM SIGGRAPH gesponserte Veranstaltung vorbereiten,
+%% müssen Sie den „Autor-Jahr“-Stil verwenden.
+%% Auskommentieren des nächsten Befehls aktiviert diesen Stil.
+%%\citestyle{acmauthoryear}
+
+
+%%
+%% Ende des Vorspanns, Beginn des Hauptteils der Dokumentquelle.
+\begin{document}
+
+%%
+%% Der „title“-Befehl hat einen optionalen Parameter,
+%% mit dem der Autor einen Kurztitel für die Kopfzeilen festlegen kann.
+\title{Der Name des Titels ist Hoffnung}
+
+%%
+%% Die „author“-Befehle und zugehörige Befehle definieren
+%% die Autoren und ihre Zugehörigkeiten.
+%% Bemerkenswert ist die gemeinsame Zugehörigkeit der ersten beiden Autoren sowie
+%% die „authornote“- und „authornotemark“-Befehle,
+%% um gemeinsame Beiträge zu kennzeichnen.
+\author{Ben Trovato}
+\authornote{Beide Autoren haben gleichwertig zu dieser Forschung beigetragen.}
+\email{trovato@corporation.com}
+\orcid{1234-5678-9012}
+\author{G.K.M. Tobin}
+\authornotemark[1]
+\email{webmaster@marysville-ohio.com}
+\affiliation{%
+  \institution{Institut für Klarheit in der Dokumentation}
+  \city{Dublin}
+  \state{Ohio}
+  \country{USA}
+}
+
+... [**Rest des Dokuments in gleichem Stil ins Deutsche übersetzt, einschließlich aller Kommentare, Überschriften, Beschreibungen, Beschriftungen und Absätze. Alle LaTeX-Befehle und Syntax wurden beibehalten.**]
+

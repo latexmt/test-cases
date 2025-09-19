@@ -1,0 +1,609 @@
+%Version 3.1 December 2024
+% See section 11 of the User Manual for version history
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                 %%
+%% Please do not use \input{...} to include other tex files.       %%
+%% Submit your LaTeX manuscript as one .tex document.              %%
+%%                                                                 %%
+%% All additional figures and files should be attached             %%
+%% separately and not embedded in the \TeX\ document itself.       %%
+%%                                                                 %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%\documentclass[referee,sn-basic]{sn-jnl}% referee option is meant for double line spacing
+
+%%=======================================================%%
+%% to print line numbers in the margin use lineno option %%
+%%=======================================================%%
+
+%%\documentclass[lineno,pdflatex,sn-basic]{sn-jnl}% Basic Springer Nature Reference Style/Chemistry Reference Style
+
+%%=========================================================================================%%
+%% the documentclass is set to pdflatex as default. You can delete it if not appropriate.  %%
+%%=========================================================================================%%
+
+%%\documentclass[sn-basic]{sn-jnl}% Basic Springer Nature Reference Style/Chemistry Reference Style
+
+%%Note: the following reference styles support Namedate and Numbered referencing. By default the style follows the most common style. To switch between the options you can add or remove Numbered in the optional parenthesis. 
+%%The option is available for: sn-basic.bst, sn-chicago.bst%  
+ 
+%%\documentclass[pdflatex,sn-nature]{sn-jnl}% Style for submissions to Nature Portfolio journals
+%%\documentclass[pdflatex,sn-basic]{sn-jnl}% Basic Springer Nature Reference Style/Chemistry Reference Style
+\documentclass[pdflatex,sn-mathphys-num]{sn-jnl}% Math and Physical Sciences Numbered Reference Style
+%%\documentclass[pdflatex,sn-mathphys-ay]{sn-jnl}% Math and Physical Sciences Author Year Reference Style
+%%\documentclass[pdflatex,sn-aps]{sn-jnl}% American Physical Society (APS) Reference Style
+%%\documentclass[pdflatex,sn-vancouver-num]{sn-jnl}% Vancouver Numbered Reference Style
+%%\documentclass[pdflatex,sn-vancouver-ay]{sn-jnl}% Vancouver Author Year Reference Style
+%%\documentclass[pdflatex,sn-apa]{sn-jnl}% APA Reference Style
+%%\documentclass[pdflatex,sn-chicago]{sn-jnl}% Chicago-based Humanities Reference Style
+
+%%%% Standard Packages
+%%<additional latex packages if required can be included here>
+
+\usepackage{graphicx}%
+\usepackage{multirow}%
+\usepackage{amsmath,amssymb,amsfonts}%
+\usepackage{amsthm}%
+\usepackage{mathrsfs}%
+\usepackage[title]{appendix}%
+\usepackage{xcolor}%
+\usepackage{textcomp}%
+\usepackage{manyfoot}%
+\usepackage{booktabs}%
+\usepackage{algorithm}%
+\usepackage{algorithmicx}%
+\usepackage{algpseudocode}%
+\usepackage{listings}%
+%%%%
+
+%%%%%=============================================================================%%%%
+%%%%  Remarks: This template is provided to aid authors with the preparation
+%%%%  of original research articles intended for submission to journals published 
+%%%%  by Springer Nature. The guidance has been prepared in partnership with 
+%%%%  production teams to conform to Springer Nature technical requirements. 
+%%%%  Editorial and presentation requirements differ among journal portfolios and 
+%%%%  research disciplines. You may find sections in this template are irrelevant 
+%%%%  to your work and are empowered to omit any such section if allowed by the 
+%%%%  journal you intend to submit to. The submission guidelines and policies 
+%%%%  of the journal take precedence. A detailed User Manual is available in the 
+%%%%  template package for technical guidance.
+%%%%%=============================================================================%%%%
+
+%% as per the requirement new theorem styles can be included as shown below
+\theoremstyle{thmstyleone}%
+\newtheorem{theorem}{Theorem}%  meant for continuous numbers
+%%\newtheorem{theorem}{Theorem}[section]% meant for sectionwise numbers
+%% optional argument [theorem] produces theorem numbering sequence instead of independent numbers for Proposition
+\newtheorem{proposition}[theorem]{Proposition}% 
+%%\newtheorem{proposition}{Proposition}% to get separate numbers for theorem and proposition etc.
+
+\theoremstyle{thmstyletwo}%
+\newtheorem{example}{Example}%
+\newtheorem{remark}{Remark}%
+
+\theoremstyle{thmstylethree}%
+\newtheorem{definition}{Definition}%
+
+\raggedbottom
+%%\unnumbered% uncomment this for unnumbered level heads
+
+\begin{document}
+
+\title[Article Title]{Artikeltitel}
+
+%%=============================================================%%
+%% GivenName	-> \fnm{Joergen W.}
+%% Particle	-> \spfx{van der} -> surname prefix
+%% FamilyName	-> \sur{Ploeg}
+%% Suffix	-> \sfx{IV}
+%% \author*[1,2]{\fnm{Joergen W.} \spfx{van der} \sur{Ploeg} 
+%%  \sfx{IV}}\email{iauthor@gmail.com}
+%%=============================================================%%
+
+\author*[1,2]{\fnm{First} \sur{Author}} \email{iAuthor@gmail.com}
+
+\author[2,3]{\fnm{Second} \sur{Author}} \email{iiAuthor@gmail.com}
+\equalcont{Diese Autoren haben zu diesem Werk gleichermaßen beigetragen.} \author[1,2]{\fnm{dritte} \sur{Autor}} \email{iiiAuthor@gmail.com}}
+\equalcont{These authors contributed equally to this work.}\affil*[1]{\orgdiv{Department}, \orgname{Organization}, \orgaddress{\street{Street}, \city{City}, \postcode{100190}, \state{State}, \country{Country}}}
+
+\affil[2]{\orgdiv{Department}, \orgname{Organization}, \orgaddress{\street{Street}, \city{City}, \postcode{10587}, \state{State}, \country{Country}}}
+
+\affil[3]{\orgdiv{Department}, \orgname{Organization}, \orgaddress{\street{Street}, \city{City}, \postcode{610101}, \state{State}, \country{Country}}}
+
+%%==================================%%
+%% Sample for unstructured abstract %%
+%%==================================%%
+
+\abstract{Die Zusammenfassung dient sowohl als allgemeine Einführung in das Thema als auch als kurze, nicht technische Zusammenfassung der Hauptergebnisse und ihrer Auswirkungen.Den Autoren wird empfohlen, die Autorenanweisungen für das Journal zu überprüfen, an das sie sich für Wortgrenzen einreichen, und wenn strukturelle Elemente wie Unterschriften, Zitate oder Gleichungen zulässig sind.} %%================================%%
+%% Sample for structured abstract %%
+%%================================%%
+
+% \abstract{\textbf{Purpose:} The abstract serves both as a general introduction to the topic and as a brief, non-technical summary of the main results and their implications. The abstract must not include subheadings (unless expressly permitted in the journal's Instructions to Authors), equations or citations. As a guide the abstract should not exceed 200 words. Most journals do not set a hard limit however authors are advised to check the author instructions for the journal they are submitting to.
+% 
+% \textbf{Methods:} The abstract serves both as a general introduction to the topic and as a brief, non-technical summary of the main results and their implications. The abstract must not include subheadings (unless expressly permitted in the journal's Instructions to Authors), equations or citations. As a guide the abstract should not exceed 200 words. Most journals do not set a hard limit however authors are advised to check the author instructions for the journal they are submitting to.
+% 
+% \textbf{Results:} The abstract serves both as a general introduction to the topic and as a brief, non-technical summary of the main results and their implications. The abstract must not include subheadings (unless expressly permitted in the journal's Instructions to Authors), equations or citations. As a guide the abstract should not exceed 200 words. Most journals do not set a hard limit however authors are advised to check the author instructions for the journal they are submitting to.
+% 
+% \textbf{Conclusion:} The abstract serves both as a general introduction to the topic and as a brief, non-technical summary of the main results and their implications. The abstract must not include subheadings (unless expressly permitted in the journal's Instructions to Authors), equations or citations. As a guide the abstract should not exceed 200 words. Most journals do not set a hard limit however authors are advised to check the author instructions for the journal they are submitting to.}
+
+\keywords{keyword1, keyword2, keyword3, keyword4}
+
+%%\pacs[JEL Classification]{D8, H51}
+
+%%\pacs[MSC Classification]{35A01, 65L10, 65L12, 65L20, 65L70}
+
+\maketitle
+
+\section{Einführung} \label{sec1}
+
+Der Einführungsabschnitt des referenzierten Textes \cite{bib1} erweitert den Hintergrund der Arbeit (einige Überlappungen mit dem Abstract sind akzeptabel).Die Einführung sollte keine Unterhose enthalten.
+
+Springer Nature verhängt kein striktes Layout als Standard, aber es wird den Autoren empfohlen, die individuellen Anforderungen für das Journal zu überprüfen, das sie vorlegen möchten, da es möglicherweise Präferenzen auf Tagebuchebene gibt.Bei der Vorbereitung Ihres Textes werden Sie sich bitte auch bewusst, dass einige stilistische Auswahlmöglichkeiten in Volltext XML (Publikationsversion), einschließlich farbiger Schriftart, nicht unterstützt werden.Diese werden in dem TypeSet -Artikel nicht repliziert, wenn er akzeptiert wird.
+
+\section{Ergebnisse} \label{sec2}
+
+Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.
+
+\section{Dies ist ein Beispiel für den Kopf der ersten Ebene --- Abschnittskopf} \label{sec3}
+
+\subsection{Dies ist ein Beispiel für den Kopf der zweiten Ebene --- Unterabschnitt} \label{subsec2}
+
+\subsubsection{Dies ist ein Beispiel für den Kopf der dritten Stufe --- SubSubsction Head} \label{subsubsec2}
+
+Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.
+
+\section{Gleichungen} \label{sec4}
+
+Gleichungen in \LaTeX \ können entweder inline oder on-a-line für sich sein ("Anzeigegleichungen").Für
+Inline-Gleichungen verwenden die Befehle \verb+$...$+.Z. B. die Gleichung
+$H\psi = E \psi$ wird über den Befehl \verb+$H \psi = E \psi$+ geschrieben.
+
+Für Anzeigegleichungen (mit automatisch generierten Gleichungsnummern)
+Man kann die Gleichung oder die Ausrichtungsumgebungen verwenden:
+\begin{equation}
+\|\tilde{X}(k)\|^2 \leq\frac{\sum\limits_{i=1}^{p}\left\|\tilde{Y}_i(k)\right\|^2+\sum\limits_{j=1}^{q}\left\|\tilde{Z}_j(k)\right\|^2 }{p+q}.\label{eq1}
+\end{equation}
+Wo,
+\begin{align}
+D_ \mu & = \partial _ \mu-IG \frac{\lambda^a}{2} A^a_ \mu \nonumber \\
+F^a _ {\mu \nu} & = \partial _ \mu a^a_ \nu-\partial _ \nu a^a_ \mu + g f^{abc} a^b_ \mu a^a
+\end{align}
+Beachten Sie die Verwendung von \verb+\nonumber+ in der Align-Umgebung am Ende
+von jeder Zeile außer der letzten, um keine Gleichungszahlen auf zu erzeugen
+Linien, bei denen keine Gleichungsnummern erforderlich sind.Der Befehl \verb+[5-15]+
+sollte nur in der letzten Zeile einer Ausrichtung verwendet werden, in der
+\verb+\nonumber+ wird nicht verwendet.
+\begin{equation}
+Y_\infty = \left( \frac{m}{\textrm{GeV}} \right)^{-3}
+    \left[ 1 + \frac{3 \ln(m/\textrm{GeV})}{15}
+    + \frac{\ln(c_2/5)}{15} \right]
+\end{equation}
+Die Klassendatei unterstützt auch die Verwendung von \verb+\mathbb{}+, \verb+\mathscr{}+ und
+\verb+\mathcal{}+ commands. As such \verb+\mathbb{R}+, \verb+\mathscr{R}+
+und \verb+\mathcal{R}+ produziert $\mathbb{R}$, $\mathscr{R}$ und $\mathcal{R}$
+jeweils (siehe Unterabschnitt ~ \ref{subsubsec2}).
+
+\section{Tabellen} \label{sec5}
+
+Tabellen können über die normale Tabelle und die tabellarische Umgebung eingefügt werden.Zu sagen
+Fußnoten in Tabellen, die Sie \verb+\footnotetext[]{...}+ Tag verwenden sollten.
+Die Fußnote erscheint direkt unter der Tabelle selbst (siehe Tabellen ~ \ref{tab1} und \ref{tab2}).
+Für die entsprechende Verwendung von Fußnothern \verb+\footnotemark[...]+
+
+\begin{table}[h]
+\caption{Caption Text} \label{tab1} %
+\begin{tabular}{@{}llll@{}}
+\toprule
+Spalte 1 & Spalte 2 & Spalte 3 & Spalte 4 \\
+\midrule
+Zeile 1 & Daten 1 & Daten 2 & Daten 3 \\
+Zeile 2 & Daten 4 & Daten 5 \footnotemark[1] & Daten 6 \\
+Zeile 3 & Daten 7 & Data 8 & Data 9 \footnotemark[2] \\
+\botrule
+\end{tabular}
+\footnotetext{Quelle: Dies ist ein Beispiel für die Tabelle Fußnote.Dies ist ein Beispiel für die Tabelle Fußnote.} \footnotetext[1]{Beispiel für eine erste Tabelle Fußnote.Dies ist ein Beispiel für die Tabelle Fußnote.} \footnotetext[2]{Beispiel für eine zweite Tabelle Fußnote.Dies ist ein Beispiel für Tabellen Fußnote.} \end{table}
+
+\noindent
+Das Eingangsformat für die obige Tabelle lautet wie folgt:
+
+%%=============================================%%
+%% For presentation purpose, we have included  %%
+%% \bigskip command. Please ignore this.       %%
+%%=============================================%%
+\bigskip
+\begin{verbatim}
+\begin{table}[<placement-specifier>]
+\caption{<table-caption>}\label{<table-label>}%
+\begin{tabular}{@{}llll@{}}
+\toprule
+Column 1 & Column 2 & Column 3 & Column 4\\
+\midrule
+row 1 & data 1 & data 2	 & data 3 \\
+row 2 & data 4 & data 5\footnotemark[1] & data 6 \\
+row 3 & data 7 & data 8	 & data 9\footnotemark[2]\\
+\botrule
+\end{tabular}
+\footnotetext{Source: This is an example of table footnote. 
+This is an example of table footnote.}
+\footnotetext[1]{Example for a first table footnote.
+This is an example of table footnote.}
+\footnotetext[2]{Example for a second table footnote. 
+This is an example of table footnote.}
+\end{table}
+\end{verbatim}
+\bigskip
+%%=============================================%%
+%% For presentation purpose, we have included  %%
+%% \bigskip command. Please ignore this.       %%
+%%=============================================%%
+
+\begin{table}[h]
+\caption{Beispiel einer langen Tabelle, die auf die vollständige Textbreite gesetzt ist} \label{tab2}
+\begin{tabular*}{[18-9]}{@{[18-10]\fill}lcccccc}
+\toprule %
+& \multicolumn{3}{@{}c@{}}{Element 1 \footnotemark[1]} & \multicolumn{3}{@{}c@{}}{Element 2 \footnotemark[2]} \\ \cmidrule{2-4} \cmidrule{5-7} %
+Project & Energy & $\sigma_{calc}$ & $\sigma_{expt}$ & Energy & $\sigma_{calc}$ & $\sigma_{expt}$ \\
+\midrule
+Element 3 & 990 A & 1168 & $1547\pm12$ & 780 A & 1166 & $1239\pm100$ \\
+Element 4 & 500 A & 961 & $922\pm10$ & 900 A & 1268 & $1092\pm40$ \\
+\botrule
+\end{tabular*}
+\footnotetext{Anmerkung: Dies ist ein Beispiel für die Tabelle Fußnote.Dies ist ein Beispiel für Tabellenfußnote Dies ist ein Beispiel für Tabellen Fußnote Dies ist ein Beispiel für ~ Tabellen-Fußnote. Dies ist ein Beispiel für die Tabelle Fußnote.} \footnotetext[1]{Beispiel für eine erste Tabelle Fußnote.} \footnotetext[2]{Beispiel für eine zweite Tabelle Fußnote.} \end{table}
+
+Im Falle eines Doppelspaltenlayouts sollten Tabellen, die nicht in eine Spaltenbreite passen, auf die Volltextbreite eingestellt werden.Dafür müssen Sie \verb+\begin{table*}+ \verb+...+ \verb+\end{table*}+ instead of \verb+\begin{table}+ \verb+...+ \verb+\end{table}+ environment. Lengthy tables which do not fit in textwidth should be set as rotated table. For this, you need to use \verb+\begin{sidewaystable}+ \verb+...+ \verb+\end{sidewaystable}+ instead of \verb+\begin{table*}+ \verb+...+ \verb+\end{table*}+ environment. This environment puts tables rotated to single column width. For tables rotated to double column width, use \verb+\begin{sidewaystable*}+ \verb+...+ \verb+\end{sidewaystable*}+ verwenden.
+
+\begin{sidewaystable}
+\caption{Tabellen, die zu lang sind, um zu passen, sollten unter Verwendung der hier gezeigten "SidewayStable" -Dumgebung geschrieben werden} \label{tab3}.} \label{tab3}
+\begin{tabular*}{[19-7]}{@{[19-8]\fill}lcccccc}
+\toprule %
+& \multicolumn{3}{@{}c@{}}{Element 1 \footnotemark[1]} & \multicolumn{3}{@{}c@{}}{Element \footnotemark[2]} \\ \cmidrule{2-4} \cmidrule{5-7} %
+Projektil & Energy & $\sigma_{calc}$ & $\sigma_{expt}$ & Energy & $\sigma_{calc}$ & $\sigma_{expt}$ \\
+\midrule
+Element 3 & 990 A & 1168 & $1547\pm12$ & 780 A & 1166 & $1239\pm100$ \\
+Element 4 & 500 A & 961 & $922\pm10$ & 900 A & 1268 & $1092\pm40$ \\
+Element 5 & 990 A & 1168 & $1547\pm12$ & 780 A & 1166 & $1239\pm100$ \\
+Element 6 & 500 A & 961 & $922\pm10$ & 900 A & 1268 & $1092\pm40$ \\
+\botrule
+\end{tabular*}
+\footnotetext{HINWEIS: Dies ist ein Beispiel für die Tabelle Fußnote Dies ist ein Beispiel für Tabellenfußnote Dies ist ein Beispiel für die Tabelle Fußnote Dies ist ein Beispiel für ~ Tabellen-Fußnote Dies ist ein Beispiel für die Tabelle Fußnote.} \footnotetext[1]{Dies ist ein Beispiel für Tabellenfußnote.} \end{sidewaystable}
+
+\section{Abbildungen} \label{sec6}
+
+Gemäß den Standards \LaTeX \ müssen Sie EPS-Bilder für \LaTeX \ -Kompilation und \verb+pdf/jpg/png+ images for \verb+PDFLaTeX+ compilation. This is one of the major difference between \LaTeX\ and \verb+PDFLaTeX+. Each image should be from a single input .eps/vector image file. Avoid using subfigures. The command for inserting images for \LaTeX\ and \verb+PDFLaTeX+ can be generalized. The package used to insert images in \verb+LaTeX/PDFLaTeX+ verwenden, und \verb+pdf/jpg/png+ images for \verb+PDFLaTeX+ compilation. This is one of the major difference between \LaTeX\ and \verb+PDFLaTeX+. Each image should be from a single input .eps/vector image file. Avoid using subfigures. The command for inserting images for \LaTeX\ and \verb+PDFLaTeX+ can be generalized. The package used to insert images in \verb+LaTeX/PDFLaTeX+ ist das Graphicx-Paket.Die Abbildungen können über die normale Figurenumgebung eingefügt werden, wie im folgenden Beispiel gezeigt:
+
+%%=============================================%%
+%% For presentation purpose, we have included  %%
+%% \bigskip command. Please ignore this.       %%
+%%=============================================%%
+\bigskip
+\begin{verbatim}
+\begin{figure}[<placement-specifier>]
+\centering
+\includegraphics{<eps-file>}
+\caption{<figure-caption>}\label{<figure-label>}
+\end{figure}
+\end{verbatim}
+\bigskip
+%%=============================================%%
+%% For presentation purpose, we have included  %%
+%% \bigskip command. Please ignore this.       %%
+%%=============================================%%
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\textwidth]{fig.eps}
+\caption{Dies ist ein WideFig.Dies ist ein Beispiel für lange Bildunterschriften Dies ist ein Beispiel für lange Bildunterschriften Dies ist ein Beispiel für lange Bildunterschriften Dies ist ein Beispiel für lange Bildunterschriften} \label{fig1}
+\end{figure}
+
+Im Falle eines Doppelspaltenlayouts bringt das obige Format Abbildung/Bilder in die einzelnen Spaltenbreite.Um überspannte Bilder zu erhalten, müssen wir \verb+\begin{figure*}+ \verb+...+ \verb+\end{figure*}+ bereitstellen.
+
+Zu Beispielzwecken haben wir die Breite der Bilder in das optionale Argument von \verb+\includegraphics+ Tag aufgenommen.Bitte ignorieren Sie das.
+
+\section{Algorithmen, Programmcodes und Listings} \label{sec7}
+
+Pakete \verb+algorithm+, \verb+algorithmicx+ and \verb+algpseudocode+ werden zum Einstellen von Algorithmen in \LaTeX \ verwendet, wobei das Format:
+
+%%=============================================%%
+%% For presentation purpose, we have included  %%
+%% \bigskip command. Please ignore this.       %%
+%%=============================================%%
+\bigskip
+\begin{verbatim}
+\begin{algorithm}
+\caption{<alg-caption>}\label{<alg-label>}
+\begin{algorithmic}[1]
+. . .
+\end{algorithmic}
+\end{algorithm}
+\end{verbatim}
+\bigskip
+%%=============================================%%
+%% For presentation purpose, we have included  %%
+%% \bigskip command. Please ignore this.       %%
+%%=============================================%%
+
+Weitere Informationen finden Sie vor dem Einstellen auf den aufgeführten Paketdokumentationen.
+
+In ähnlicher Weise für \verb+listings+, use the \verb+listings+ package. \verb+\begin{lstlisting}+ \verb+...+ \verb+\end{lstlisting}+ is used to set environments similar to \verb+verbatim+ environment. Refer to the \verb+lstlisting+ Paketdokumentation für weitere Details.
+
+Ein schnelles Exponentiationsverfahren:
+
+\lstset{texcl = true, BasicStyle = \small \sf, commentstyle = \small \rm, mathescape = true, Escapeinside = {(*} {*)}}
+\begin{lstlisting}
+begin
+  for $i:=1$ to $10$ step $1$ do
+      expt($2,i$);  
+      newline() od                (*\textrm{Comments will be set flush to the right margin}*)
+where
+proc expt($x,n$) $\equiv$
+  $z:=1$;
+  do if $n=0$ then exit fi;
+     do if odd($n$) then exit fi;                 
+        comment: (*\textrm{This is a comment statement;}*)
+        $n:=n/2$; $x:=x*x$ od;
+     { $n>0$ };
+     $n:=n-1$; $z:=z*x$ od;
+  print($z$). 
+end
+\end{lstlisting}
+
+\begin{algorithm}
+\caption{berechnen $y = x^n$} \label{algo1}
+\begin{algorithmic}[1]
+\Require $n \geq 0 \vee x \neq 0$
+\Ensure $y = x^n$
+\State $y \Leftarrow 1$
+\If{$n < 0$} \label{algln2}
+\State $X \Leftarrow 1 / x$
+\State $N \Leftarrow -n$
+\Else
+\State $X \Leftarrow x$
+\State $N \Leftarrow n$
+\EndIf
+\While{$N \neq 0$}
+\If{$N$ ist sogar}
+\State $X \Leftarrow X \times X$
+\State $N \Leftarrow N / 2$
+\Else $N$ ist ungerade]
+\State $y \Leftarrow y \times X$
+\State $N \Leftarrow N - 1$
+\EndIf
+\EndWhile
+\end{algorithmic}
+\end{algorithm}
+
+%%=============================================%%
+%% For presentation purpose, we have included  %%
+%% \bigskip command. Please ignore this.       %%
+%%=============================================%%
+\bigskip
+\begin{minipage}{[22-6]} %
+\lstset{Frame = einzeln, FramExLeftmargin = -1pt, FramexRightmargin = -17pt, Framesep = 12pt, Linienbreite = 0,98 \textwidth, Sprache = Pascal} % Set your language (you can change the language for each code-block optionally)
+%%% Start your code-block
+\begin{lstlisting}
+for i:=maxint to 0 do
+begin
+{ do nothing }
+end;
+Write('Case insensitive ');
+Write('Pascal keywords.');
+\end{lstlisting}
+\end{minipage}
+
+\section{Querverweis} \label{sec8}
+
+Umgebungen wie Abbildung, Tabelle, Gleichung und Ausrichtung können ein Etikett haben
+über den Befehl \verb+[6-9]+ deklariert.Für Zahlen und Tabelle
+Umgebungen verwenden den Befehl \verb+[6-10]+ im Inneren oder gerecht
+unter dem Befehl \verb+\caption{}+.Sie können dann die verwenden
+\verb+[7-6]+ Befehl, sie zu referenzieren.Als Beispiel in Betracht ziehen, bedenken Sie
+Das für Abbildung deklarierte Etikett \ref{fig1}, was ist
+\verb+[6-11]+.Verwenden Sie den Befehl, um es zu referenzieren
+\verb+Figure [7-8]+, für die es als
+"Abbildung ~ \ref{fig1}".
+
+Um die Zeilennummern in einem Algorithmus zu referenzieren, betrachten Sie das für die Zeilennummer 2 von Algorithmus ~ \ref{algo1} deklarierte Etikett \verb+[6-12]+. To cross-reference it, use the command \verb+[7-11]+, für die es als Linie ~ \ref{algln2} des Algorithmus ~ \ref{algo1} auftaucht.
+
+\subsection{Details zu Referenzzitaten} \label{subsec7}
+
+Standard \LaTeX \ erlaubt nur numerische Zitate.Um sowohl numerische als auch Autorenjahreszitate zu unterstützen, verwendet diese Vorlage \verb+natbib+ \LaTeX \ Paket.Informationen zur Stilanleitung finden Sie im Vorlagenbenutzerhandbuch.
+
+Hier ist ein Beispiel für \verb+[8-1]+: [8-2]. Another example for \verb+\citep{...}+: \citep{bib2}. For author-year citation mode, \verb+[8-3]+ prints Jones et al. (1990) and \verb+\citep{...}+ Drucke (Jones et al., 1990).
+
+Alle zitierten BIB-Einträge werden am Ende dieses Artikels gedruckt: \cite{bib3}, \cite{bib4}, \cite{bib5}, \cite{bib6}, \cite{bib7}, \cite{bib8}, \cite{bib9}, \cite{bib10}, \cite{bib11}, \cite{bib12} und \cite{bib13}.
+
+\section{Beispiele für Theorem-ähnliche Umgebungen} \label{sec10}
+
+Für den Satz wie Umgebungen benötigen wir \verb+amsthm+ package. There are three types of predefined theorem styles exists---\verb+thmstyleone+, \verb+thmstyletwo+ and \verb+thmstylethree+
+
+%%=============================================%%
+%% For presentation purpose, we have included  %%
+%% \bigskip command. Please ignore this.       %%
+%%=============================================%%
+\bigskip
+\begin{tabular}{|l|p{19pc}|}
+\hline
+\verb+thmstyleone+ & nummeriert, Theorem Head in fettem Schriftart und Theorem-Text im kursiven Stil \\ \hline
+\verb+thmstyletwo+ & nummeriert, Theorem Head in römischer Schrift und Theorem-Text im kursiven Stil \\ \hline
+\verb+thmstylethree+ & nummeriert, Theorem Head in kühner Schrift und Theoremtext im römischen Stil \\ \hline
+\end{tabular}
+\bigskip
+%%=============================================%%
+%% For presentation purpose, we have included  %%
+%% \bigskip command. Please ignore this.       %%
+%%=============================================%%
+
+Für Mathematikzeitschriften können Theorem -Stile wie in den folgenden Beispielen angezeigt werden:
+
+\begin{theorem}[Theorem subhead] \label{thm1}
+Beispiel Theorem Text.Beispiel Theorem Text.Beispiel Theorem Text.Beispiel Theorem Text.Beispiel Theorem Text.
+Beispiel Theorem Text.Beispiel Theorem Text.Beispiel Theorem Text.Beispiel Theorem Text.Beispiel Theorem Text.
+Beispiel Theorem Text.
+\end{theorem}
+
+Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.
+
+\begin{proposition}
+Beispiel für den Vorschlag Text.Beispiel für den Vorschlag Text.Beispiel für den Vorschlag Text.Beispiel für den Vorschlag Text.Beispiel für den Vorschlag Text.
+Beispiel für den Vorschlag Text.Beispiel für den Vorschlag Text.Beispiel für den Vorschlag Text.Beispiel für den Vorschlag Text.Beispiel für den Vorschlag Text.
+\end{proposition}
+
+Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.
+
+\begin{example}
+Phasellus adipiscing semper elit.Proin Fermentum Massa
+AC Quam.Turpis von SED Diam, Malestie Vitae, Placerat A, Childestie NEC, Leo.Maecenas Lacinia.NAM Ipsum Ligula, Eleifend
+AT, ACCUMSAN NEC, SUSCIPIT A, IPSUM.Morbi Blandit Ligula Fegiat Magna.Nunc Eleifend Folg Lorem.
+\end{example}
+
+Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.
+
+\begin{remark}
+Phasellus adipiscing semper elit.Proin Fermentum Massa
+AC Quam.Turpis von SED Diam, Malestie Vitae, Placerat A, Childestie NEC, Leo.Maecenas Lacinia.NAM Ipsum Ligula, Eleifend
+AT, ACCUMSAN NEC, SUSCIPIT A, IPSUM.Morbi Blandit Ligula Fegiat Magna.Nunc Eleifend Folg Lorem.
+\end{remark}
+
+Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.
+
+\begin{definition}[Definition sub head]
+Beispiel Definitionstext.Beispiel Definitionstext.Beispiel Definitionstext.Beispiel Definitionstext.Beispiel Definitionstext.Beispiel Definitionstext.Beispiel Definitionstext.Beispiel Definitionstext.
+\end{definition}
+
+Zusätzlich ist eine vordefinierte "Proof" -Enumgebung verfügbar: \verb+\begin{proof}+ \verb+...+ \verb+\end{proof}+.Dies druckt einen "Proof" -Köpfe im kursiven Schriftstil und den "Körpertext" im römischen Schriftstil mit einem offenen Quadrat am Ende jeder Proof -Umgebung.
+
+\begin{proof}
+Beispiel für den Beweistext.Beispiel für den Beweistext.Beispiel für den Beweistext.Beispiel für den Beweistext.Beispiel für den Beweistext.Beispiel für den Beweistext.Beispiel für den Beweistext.Beispiel für den Beweistext.Beispiel für den Beweistext.Beispiel für den Beweistext.
+\end{proof}
+
+Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.
+
+\begin{proof} [Beweis von Theorem ~ {\upshape \ref{thm1}}]
+Beispiel für den Beweistext.Beispiel für den Beweistext.Beispiel für den Beweistext.Beispiel für den Beweistext.Beispiel für den Beweistext.Beispiel für den Beweistext.Beispiel für den Beweistext.Beispiel für den Beweistext.Beispiel für den Beweistext.Beispiel für den Beweistext.
+\end{proof}
+
+\noindent
+Verwenden Sie für eine Zitatumgebung \verb+\begin{quote}...\end{quote}+
+\begin{quote}
+Zitiertes Textbeispiel.Aliquam Porttitor Quam A Lacus.Praesent Vel Arcu Ut Tortor Cursus Volutpat.In Vitae Pede Quis Diam Bibendum Placerat.Fusce elementum
+convallis nque.Sed Dolor Orci, Scelerisque AC, Dapibus NEC, Ultrikies UT, MI.Duis NEC DUI Quis Leo Sagittis Commodo.
+\end{quote}
+
+Probe Körpertext.Probe Körpertext.Probe Körpertext.Probe Körpertext.Probenkörpertext (siehe Abbildung ~ \ref{fig1}).Probe Körpertext.Probe Körpertext.Probenkörpertext (siehe Tabelle ~ \ref{tab3}).
+
+\section{Methoden} \label{sec11}
+
+Topische Unterschriften sind erlaubt.Die Autoren müssen sicherstellen, dass der Abschnitt mit den Methoden angemessene experimentelle und Charakterisierungsdaten enthält, die für andere vor Ort erforderlich sind, um ihre Arbeit zu reproduzieren.Die Autoren werden ermutigt, gegebenenfalls RIIDS aufzunehmen.
+
+\textbf{Ethische Genehmigungserklärungen} (gegebenenfalls nur gefordert) Alle Artikelberichterstattungsexperiments, die auf (i) Live-Wirbeltier (oder höhere Wirbellose) durchgeführt wurden, (ii) Menschen oder (iii) ~ menschliche Stichproben müssen innerhalb der Methodenabteilung eine eindeutige Aussage enthalten, die den folgenden Anforderungen erfüllt:
+
+\begin{enumerate}[1.]
+\item Genehmigung: Eine Erklärung, die bestätigt, dass alle experimentellen Protokolle von einem benannten institutionellen und/oder Lizenzausschuss genehmigt wurden.Bitte identifizieren Sie die Genehmigungsbehörde im Abschnitt Methoden
+
+\item Übereinstimmung: Eine Erklärung, die ausdrücklich besagt, dass die Methoden gemäß den relevanten Richtlinien und Vorschriften durchgeführt wurden
+
+\item Einverständniserklärung (für Experimente mit Menschen oder menschlichen Gewebeproben): Fügen Sie eine Erklärung hinzu, in der bestätigt wird
+\end{enumerate}
+
+Wenn Ihr Manuskript potenziell identifizierende Informationen/Teilnehmerinformationen beinhaltet oder wenn es die menschliche Transplantationsforschung beschreibt oder wenn die Ergebnisse einer klinischen Studie angegeben sind, sind zusätzliche Informationen erforderlich.Bitte besuchen Sie (\url{https://www.nature.com/nature-research/editorial-policies}) für Natural-Portfolio-Zeitschriften (\url{https://www.springer.com/gp/authors-editors/journal-author/journal-author-helpdesk/publishing-ethics/14214}) für Springer Nature Journals oder (\url{https://www.biomedcentral.com/getpublished/editorial-policies\#ethics+and+consent}) für BMC.
+
+\section{Diskussion} \label{sec12}
+
+Diskussionen sollten kurz und fokussiert sein.In einigen Disziplinen ist die Verwendung von Diskussionen oder "Schlussfolgerung" austauschbar.Es ist nicht obligatorisch, beides zu verwenden.Einige Zeitschriften bevorzugen einen Abschnitt "Ergebnisse und Diskussion", gefolgt von einem Abschnitt "Schlussfolgerung".In Bezug auf bestimmte Anforderungen finden Sie in Bezug auf die Anleitung auf Journalebene.
+
+\section{Schlussfolgerung} \label{sec13}
+
+Schlussfolgerungen können verwendet werden, um Ihre Hypothese- oder Forschungsfrage wiederzugeben, Ihre Hauptbeschwerden wiederzugeben, die Relevanz und den Mehrwert Ihrer Arbeit zu erläutern, alle Einschränkungen Ihrer Studie hervorzuheben, zukünftige Richtungen für Forschung und Empfehlungen zu beschreiben.
+
+In einigen Disziplinen ist die Verwendung von Diskussion oder „Schlussfolgerung“ austauschbar.Es ist nicht obligatorisch, beides zu verwenden.In Bezug auf bestimmte Anforderungen finden Sie in Bezug auf die Anleitung auf Journalebene.
+
+\backmatter
+
+\bmhead{ergänzende Informationen}
+
+Wenn Ihr Artikel ergänzende Dateien begleitet hat, geben Sie dies bitte hier an.
+
+Autoren, die Daten aus elektrophoretischen Gelen und Blots melden, sollten die vollständigen unverarbeiteten Scans für den Schlüssel im Rahmen ihrer ergänzenden Informationen liefern.Dies kann vom Redaktionsteam angefordert werden, wenn es fehlt.
+
+In Bezug auf bestimmte Anforderungen finden Sie in Bezug auf die Anleitung auf Journalebene.
+
+\bmhead{Anerkennung}
+
+Danksagungen sind nicht obligatorisch.Wo einbezogen werden, sollten sie kurz sein.Zuschuss- oder Beitragsnummern können anerkannt werden.
+
+In Bezug auf bestimmte Anforderungen finden Sie in Bezug auf die Anleitung auf Journalebene.
+
+\section*{Deklarationen}
+
+Einige Zeitschriften verlangen, dass Deklarationen in einem standardisierten Format eingereicht werden.Bitte überprüfen Sie die Anweisungen für Autoren des Journals, zu dem Sie einreichen, um festzustellen, ob Sie diesen Abschnitt ausfüllen müssen.Wenn ja, muss Ihr Manuskript die folgenden Abschnitte unter der Überschrift "Deklarationen" enthalten:
+
+\begin{itemize}
+\item Finanzierung
+\item Interessenkonflikte/konkurrierende Interessen (prüfen Sie die Journal-spezifischen Richtlinien, für die der Übergang verwendet wird)
+\item Ethikgenehmigung und Zustimmung zur Teilnahme
+\item Zustimmung zur Veröffentlichung
+\item Datenverfügbarkeit
+\item Materialverfügbarkeit
+\item CODE-Verfügbarkeit
+\item Autorenbeitrag
+\end{itemize}
+
+\noindent
+Wenn einer der Abschnitte für Ihr Manuskript nicht relevant ist, geben Sie bitte die Überschrift an und schreiben Sie für diesen Abschnitt "Nicht zutreffend".
+
+%%===================================================%%
+%% For presentation purpose, we have included        %%
+%% \bigskip command. Please ignore this.             %%
+%%===================================================%%
+\bigskip
+\begin{flushleft} %
+Redaktionelle Richtlinien für:
+
+\bigskip \noindent
+Springer Journals und Verfahren: \url{https://www.springer.com/gp/editorial-policies}
+
+\bigskip \noindent
+Nature Portfolio Journals: \url{https://www.nature.com/nature-research/editorial-policies}
+
+\bigskip \noindent
+\textit{wissenschaftliche Berichte}: \url{https://www.nature.com/srep/journal-policies/editorial-policies}
+
+\bigskip \noindent
+BMC-Journale: \url{https://www.biomedcentral.com/getpublished/editorial-policies}
+\end{flushleft}
+
+\begin{appendices}
+
+\section{Abschnittstitel des ersten Anhangs} \label{secA1}
+
+Ein Anhang enthält zusätzliche Informationen, die kein wesentlicher Bestandteil des Textes selbst sind, aber hilfreich sein können, um ein umfassenderes Verständnis des Forschungsproblems zu vermitteln, oder es sind Informationen, die zu mühsam sind, um in den Körper des Papiers aufgenommen zu werden.
+
+%%=============================================%%
+%% For submissions to Nature Portfolio Journals %%
+%% please use the heading ``Extended Data''.   %%
+%%=============================================%%
+
+%%=============================================================%%
+%% Sample for another appendix section			       %%
+%%=============================================================%%
+
+%% \section{Example of another appendix section}\label{secA2}%
+%% Appendices may be used for helpful, supporting or essential material that would otherwise 
+%% clutter, break up or be distracting to the text. Appendices can consist of sections, figures, 
+%% tables and equations etc.
+
+\end{appendices}
+
+%%===========================================================================================%%
+%% If you are submitting to one of the Nature Portfolio journals, using the eJP submission   %%
+%% system, please include the references within the manuscript file itself. You may do this  %%
+%% by copying the reference list from your .bbl file, paste it into the main manuscript .tex %%
+%% file, and delete the associated \verb+\bibliography+ commands.                            %%
+%%===========================================================================================%%
+
+\bibliography{sn-bibliography} % common bib file
+%% if required, the content of .bbl file can be included here once bbl is generated
+%%\input sn-article.bbl
+
+\end{document}

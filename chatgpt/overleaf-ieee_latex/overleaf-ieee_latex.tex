@@ -1,0 +1,249 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% Die vorhergehende Zeile wird nur benötigt, um Fördermittel in der ersten Fußnote anzugeben. Wenn dies nicht erforderlich ist, bitte auskommentieren.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{Titel des Konferenzbeitrags*\\
+{\footnotesize \textsuperscript{*}Hinweis: Untertitel werden in Xplore nicht erfasst und
+sollten nicht verwendet werden}
+\thanks{Hier die zuständige Förderagentur angeben. Falls keine vorhanden, bitte löschen.}
+}
+
+\author{\IEEEauthorblockN{1\textsuperscript{ste/r} Vorname Nachname}
+\IEEEauthorblockA{\textit{Abteilungsname der Organisation (der Zugeh.)} \\
+\textit{Name der Organisation (der Zugeh.)}\\
+Stadt, Land \\
+E-Mail-Adresse oder ORCID}
+\and
+\IEEEauthorblockN{2\textsuperscript{te/r} Vorname Nachname}
+\IEEEauthorblockA{\textit{Abteilungsname der Organisation (der Zugeh.)} \\
+\textit{Name der Organisation (der Zugeh.)}\\
+Stadt, Land \\
+E-Mail-Adresse oder ORCID}
+\and
+\IEEEauthorblockN{3\textsuperscript{te/r} Vorname Nachname}
+\IEEEauthorblockA{\textit{Abteilungsname der Organisation (der Zugeh.)} \\
+\textit{Name der Organisation (der Zugeh.)}\\
+Stadt, Land \\
+E-Mail-Adresse oder ORCID}
+\and
+\IEEEauthorblockN{4\textsuperscript{te/r} Vorname Nachname}
+\IEEEauthorblockA{\textit{Abteilungsname der Organisation (der Zugeh.)} \\
+\textit{Name der Organisation (der Zugeh.)}\\
+Stadt, Land \\
+E-Mail-Adresse oder ORCID}
+\and
+\IEEEauthorblockN{5\textsuperscript{te/r} Vorname Nachname}
+\IEEEauthorblockA{\textit{Abteilungsname der Organisation (der Zugeh.)} \\
+\textit{Name der Organisation (der Zugeh.)}\\
+Stadt, Land \\
+E-Mail-Adresse oder ORCID}
+\and
+\IEEEauthorblockN{6\textsuperscript{te/r} Vorname Nachname}
+\IEEEauthorblockA{\textit{Abteilungsname der Organisation (der Zugeh.)} \\
+\textit{Name der Organisation (der Zugeh.)}\\
+Stadt, Land \\
+E-Mail-Adresse oder ORCID}
+}
+
+\maketitle
+
+\begin{abstract}
+Dieses Dokument ist ein Modell und eine Anleitung für \LaTeX.
+Dieses und die Datei IEEEtran.cls definieren die Komponenten Ihres Papers [Titel, Text, Überschriften usw.]. *WICHTIG: Keine Symbole, Sonderzeichen, Fußnoten
+oder Mathematik im Titel oder Abstract verwenden.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Komponente, Formatierung, Stil, Gestaltung, Einfügen
+\end{IEEEkeywords}
+
+\section{Einleitung}
+Dieses Dokument ist ein Modell und eine Anleitung für \LaTeX.
+Bitte beachten Sie die Seitenbegrenzungen der Konferenz.
+
+\section{Benutzerfreundlichkeit}
+
+\subsection{Wahrung der Integrität der Spezifikationen}
+
+Die IEEEtran-Klasse wird verwendet, um Ihr Paper zu formatieren und den Text zu gestalten. Alle Ränder,
+Spaltenbreiten, Zeilenabstände und Schriftarten sind vorgegeben; bitte ändern Sie diese nicht.
+Sie könnten Besonderheiten feststellen. Zum Beispiel misst der obere Rand
+proportional mehr als üblich. Dieses und andere Maße sind beabsichtigt, um Ihr Paper
+als Teil des gesamten Tagungsbandes und nicht als eigenständiges Dokument zu berücksichtigen.
+Bitte ändern Sie keine der aktuellen Bezeichnungen.
+
+\section{Bereiten Sie Ihr Paper vor dem Formatieren vor}
+Bevor Sie Ihr Paper formatieren, schreiben und speichern Sie den Inhalt zunächst als
+separate Textdatei. Schließen Sie alle inhaltlichen und organisatorischen Überarbeitungen ab, bevor
+Sie formatieren. Bitte beachten Sie die Abschnitte \ref{AA}--\ref{SCM} unten für weitere Informationen zu
+Korrekturlesen, Rechtschreibung und Grammatik.
+
+Halten Sie Ihre Text- und Grafikdateien getrennt, bis der Text
+formatiert und gestaltet wurde. Nummerieren Sie keine Überschriften—{\LaTeX} übernimmt das
+für Sie.
+
+\subsection{Abkürzungen und Akronyme}\label{AA}
+Definieren Sie Abkürzungen und Akronyme beim ersten Auftreten im Text,
+auch wenn sie bereits im Abstract definiert wurden. Abkürzungen wie
+IEEE, SI, MKS, CGS, AC, DC und RMS müssen nicht definiert werden. Verwenden Sie keine
+Abkürzungen im Titel oder in Überschriften, es sei denn, sie sind unvermeidbar.
+
+\subsection{Einheiten}
+\begin{itemize}
+\item Verwenden Sie entweder SI- (MKS) oder CGS-Einheiten als primäre Einheiten. (SI-Einheiten werden empfohlen.) Englische Einheiten dürfen als sekundäre Einheiten (in Klammern) verwendet werden. Eine Ausnahme wäre die Verwendung englischer Einheiten als Handelsbezeichnung, z. B. „3,5-Zoll-Festplatte“.
+\item Vermeiden Sie die Kombination von SI- und CGS-Einheiten, z. B. Strom in Ampere und Magnetfeld in Oersted. Dies führt oft zu Verwirrung, da Gleichungen nicht dimensionsgetreu sind. Wenn Sie gemischte Einheiten verwenden müssen, geben Sie die Einheiten für jede Größe in einer Gleichung klar an.
+\item Mischen Sie keine ausgeschriebenen Einheiten und Abkürzungen: „Wb/m\textsuperscript{2}“ oder „Weber pro Quadratmeter“, nicht „Webers/m\textsuperscript{2}“. Schreiben Sie Einheiten aus, wenn sie im Text erscheinen: „… ein paar Henry“, nicht „… ein paar H“.
+\item Verwenden Sie eine Null vor Dezimalpunkten: „0,25“, nicht „.25“. Verwenden Sie „cm\textsuperscript{3}“, nicht „cc“.
+\end{itemize}
+
+\subsection{Gleichungen}
+Nummerieren Sie Gleichungen fortlaufend. Um Ihre Gleichungen kompakter zu gestalten, können Sie den Schrägstrich (~/~), die exp-Funktion oder
+geeignete Exponenten verwenden. Kursivieren Sie römische Symbole für Größen und Variablen,
+aber nicht griechische Symbole. Verwenden Sie einen langen Gedankenstrich anstelle eines Bindestrichs für Minuszeichen. Satzzeichen bei Gleichungen folgen den Regeln, z. B.:
+\begin{equation}
+a+b=\gamma\label{eq}
+\end{equation}
+
+Stellen Sie sicher, dass die
+Symbole in Ihrer Gleichung vor oder unmittelbar nach der Gleichung definiert wurden. Verwenden Sie „\eqref{eq}“, nicht „Eq.~\eqref{eq}“ oder „Gleichung \eqref{eq}“, außer am
+Satzanfang: „Gleichung \eqref{eq} ist …“
+
+\subsection{\LaTeX-spezifische Hinweise}
+
+Bitte verwenden Sie „weiche“ (z. B. \verb|\eqref{Eq}|) Querverweise statt
+„harter“ Verweise (z. B. \verb|(1)|). Dadurch können Abschnitte kombiniert,
+Gleichungen hinzugefügt oder die Reihenfolge von Abbildungen oder Zitaten geändert werden,
+ohne die Datei zeilenweise prüfen zu müssen.
+
+Verwenden Sie nicht die Umgebung \verb|{eqnarray}|. Benutzen Sie
+\verb|{align}| oder \verb|{IEEEeqnarray}| stattdessen. Die Umgebung \verb|{eqnarray}|
+erzeugt unschöne Abstände um Relationssymbole.
+
+Beachten Sie, dass die Umgebung \verb|{subequations}| in {\LaTeX}
+den Hauptgleichungszähler hochzählt, auch wenn keine Gleichungsnummern angezeigt werden.
+Wenn Sie das vergessen, könnten Gleichungsnummern von (17) auf (20) springen und
+die Herausgeber verwirren.
+
+{\BibTeX} arbeitet nicht magisch. Es bezieht die bibliografischen
+Daten nicht aus der Luft, sondern aus .bib-Dateien. Wenn Sie {\BibTeX} verwenden, um ein
+Literaturverzeichnis zu erstellen, müssen Sie die .bib-Dateien mitsenden.
+
+{\LaTeX} kann nicht Ihre Gedanken lesen. Wenn Sie demselben Label sowohl einer
+Unteruntersektion als auch einer Tabelle zuweisen, könnte Tabelle I
+fälschlicherweise als Tabelle IV-B3 referenziert werden.
+
+{\LaTeX} besitzt keine hellseherischen Fähigkeiten. Wenn Sie ein
+\verb|\label|-Kommando vor dem Kommando setzen, das den Zähler aktualisiert,
+wird das Label auf den zuletzt referenzierten Zähler zeigen. Setzen Sie daher
+\verb|\label| nicht vor die Bild- oder Tabellenüberschrift.
+
+Verwenden Sie nicht \verb|\nonumber| in der Umgebung \verb|{array}|.
+Es verhindert keine Gleichungsnummern innerhalb von \verb|{array}| (es gäbe dort ohnehin keine)
+und könnte eine gewünschte Gleichungsnummer in der umgebenden Gleichung unterdrücken.
+
+\subsection{Häufige Fehler}\label{SCM}
+\begin{itemize}
+\item Das Wort „Daten“ ist Plural, nicht Singular.
+\item Der Index für die magnetische Feldkonstante $\mu_{0}$ und andere Konstanten ist eine Null im Indexformat, kein kleines „o“.
+\item In amerikanischem Englisch stehen Kommas, Semikolons, Punkte, Frage- und Ausrufezeichen innerhalb der Anführungszeichen nur, wenn ein vollständiger Gedanke oder Name zitiert wird, z. B. ein Titel oder ein vollständiges Zitat. Werden Anführungszeichen verwendet, um ein Wort oder eine Phrase hervorzuheben, steht die Interpunktion außerhalb der Anführungszeichen. Ein Klammerausdruck am Satzende wird außerhalb der Klammern punktiert (wie hier). (Ein eigener Klammer-Satz wird innerhalb der Klammern punktiert.)
+\item Ein Diagramm in einem Diagramm ist ein „Inset“, kein „Insert“. Verwenden Sie „alternativ“ statt „abwechselnd“ („alternately“), außer es ist wirklich gemeint.
+\item Verwenden Sie nicht „wesentlich“ („essentially“) im Sinne von „ungefähr“ oder „effektiv“.
+\item In Ihrem Titel: Wenn „that uses“ korrekt durch „using“ ersetzt werden kann, wird „using“ großgeschrieben; sonst bleibt es kleingeschrieben.
+\item Achten Sie auf die unterschiedlichen Bedeutungen der Homophone „affect“ und „effect“, „complement“ und „compliment“, „discreet“ und „discrete“, „principal“ und „principle“.
+\item Verwechseln Sie nicht „implizieren“ („imply“) und „folgern“ („infer“).
+\item Das Präfix „non“ ist kein eigenständiges Wort; es wird ohne Bindestrich an das Wort angefügt, das es modifiziert.
+\item Nach „et“ in der lateinischen Abkürzung „et al.“ steht kein Punkt.
+\item Die Abkürzung „i.e.“ bedeutet „das heißt“, und „e.g.“ bedeutet „zum Beispiel“.
+\end{itemize}
+Ein ausgezeichnetes Stilhandbuch für Wissenschaftsautoren ist \cite{b7}.
+
+\subsection{Autoren und Zugehörigkeiten}
+\textbf{Die Klassen-Datei ist für sechs Autoren ausgelegt, aber nicht darauf beschränkt.} Mindestens ein Autor ist für alle Konferenzbeiträge erforderlich. Autorennamen
+sollten von links nach rechts und dann in der nächsten Zeile weiter aufgeführt werden.
+Dies ist die Reihenfolge, die in zukünftigen Zitaten
+und von Indexierungsdiensten verwendet wird. Namen sollten nicht in Spalten aufgeteilt oder nach Zugehörigkeit gruppiert werden. Halten Sie Ihre Zugehörigkeiten so knapp wie möglich (z. B. keine Unterscheidung zwischen Abteilungen derselben Organisation).
+
+\subsection{Überschriften identifizieren}
+Überschriften oder Titel sind organisatorische Hilfsmittel, die den Leser durch
+Ihr Paper führen. Es gibt zwei Arten: Komponentenüberschriften und Textüberschriften.
+
+Komponentenüberschriften identifizieren die verschiedenen Teile Ihres Papers und sind nicht
+thematisch untergeordnet. Beispiele sind Danksagungen und
+Literaturverzeichnis. Verwenden Sie hierfür den Stil „Heading 5“. Verwenden Sie
+„figure caption“ für Bildunterschriften und „table head“ für Tabellentitel. Laufende Überschriften wie „Abstract“ erfordern die Anwendung eines
+zusätzlichen Stils (z. B. kursiv), um sie vom Text abzuheben.
+
+Textüberschriften organisieren die Themen auf hierarchischer Basis.
+Zum Beispiel ist der Papiertitel die primäre Textüberschrift, da sich alles Weitere
+darauf bezieht und es vertieft. Wenn es zwei oder mehr Unterthemen gibt, sollte die nächste Ebene (römische Ziffern in Großbuchstaben) verwendet werden. Wenn nicht, sollten keine Unterüberschriften eingeführt werden.
+
+\subsection{Abbildungen und Tabellen}
+\paragraph{Platzierung von Abbildungen und Tabellen} Platzieren Sie Abbildungen und Tabellen oben oder unten in Spalten. Vermeiden Sie die Platzierung in der Mitte von Spalten. Große
+Abbildungen und Tabellen können beide Spalten umfassen. Bildunterschriften sollten unterhalb der Abbildungen stehen; Tabellenüberschriften oberhalb der Tabellen. Fügen Sie
+Abbildungen und Tabellen erst nach ihrer Erwähnung im Text ein. Verwenden Sie die Abkürzung
+„Abb.~\ref{fig}“, auch am Satzanfang.
+
+\begin{table}[htbp]
+\caption{Tabellentypstile}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Tabelle}&\multicolumn{3}{|c|}{\textbf{Tabellenspaltenkopf}} \\
+\cline{2-4} 
+\textbf{Kopf} & \textbf{\textit{Tabellenspalten-Unterkopf}}& \textbf{\textit{Unterkopf}}& \textbf{\textit{Unterkopf}} \\
+\hline
+Kopie& Mehr Tabellenkopie$^{\mathrm{a}}$& &  \\
+\hline
+\multicolumn{4}{l}{$^{\mathrm{a}}$Beispiel für eine Tabellenfußnote.}
+\end{tabular}
+\label{tab1}
+\end{center}
+\end{table}
+
+\begin{figure}[htbp]
+\centerline{\includegraphics{fig1.png}}
+\caption{Beispiel einer Bildunterschrift.}
+\label{fig}
+\end{figure}
+
+Bildbeschriftungen: Verwenden Sie 8pt Times New Roman für Bildbeschriftungen. Schreiben Sie Wörter
+anstelle von Symbolen oder Abkürzungen, um den Leser nicht zu verwirren. Beispiel: Schreiben Sie
+„Magnetisierung“ oder „Magnetisierung, M“, nicht nur „M“. Falls Einheiten enthalten sind, setzen Sie sie in Klammern. Schreiben Sie also „Magnetisierung (A/m)“ und nicht nur „A/m“. Vermeiden Sie Beschriftungen mit Quotienten wie „Temperatur/K“—schreiben Sie „Temperatur (K)“.
+
+\section*{Danksagung}
+
+Die bevorzugte amerikanische Schreibweise von „acknowledgment“ enthält
+kein „e“ nach dem „g“. Vermeiden Sie den gestelzten Ausdruck „einer von uns (R. B. G.) dankt …“. Verwenden Sie stattdessen „R. B. G. dankt …“. Platzieren Sie Förderhinweise in der unnummerierten Fußnote auf der ersten Seite.
+
+\section*{Literaturverzeichnis}
+
+Nummerieren Sie Zitate fortlaufend in eckigen Klammern \cite{b1}.
+Das Satzzeichen folgt der Klammer \cite{b2}. Verweisen Sie einfach auf die Nummer,
+z. B. \cite{b3}—verwenden Sie nicht „Ref. \cite{b3}“ oder „Referenz \cite{b3}“, außer am
+Satzanfang: „Referenz \cite{b3} war die erste …“
+
+Nummerieren Sie Fußnoten getrennt in Hochstellung. Platzieren Sie die eigentliche Fußnote
+unten in der Spalte, in der sie zitiert wird. Platzieren Sie keine Fußnoten im
+Abstract oder im Literaturverzeichnis. Verwenden Sie Buchstaben für Tabellenfußnoten.
+
+Sofern nicht sechs oder mehr Autoren beteiligt sind, geben Sie alle Autoren an; verwenden Sie nicht
+„et al.“. Noch nicht veröffentlichte Arbeiten, auch wenn sie eingereicht wurden, sollten als „unveröffentlicht“ \cite{b4} zitiert werden.
+Angenommene, aber noch nicht veröffentlichte Arbeiten werden als „im Druck“ \cite{b5} angegeben.
+Schreiben Sie nur das erste Wort eines Titels groß, außer Eigennamen und Elementsymbole.
+
+Für in Übersetzungszeitschriften veröffentlichte Arbeiten geben Sie bitte zuerst das englische
+Zitat und dann das Originalzitat in der Fremdsprache an \cite{b6}.
+
+\begin{thebibliography}{00}
+\bibitem{b1} G. Eason, B. Noble und I. N. Sneddon, „Über bestimmte Integrale vom Lipschitz-Hankel-Typ, die Produkte von Besselfunktionen enthalten,“ Phil. Trans. Roy. Soc. London, Bd. A247, S. 529--551, April 1955.
+\bibitem{b2} J. Clerk Maxwell, Abhandlung über Elektrizität und Magnetismus, 3. Aufl., Bd. 2. Oxford: Clarendon, 1892, S.68--73.
+\bibitem{b3} I. S. Jacobs und C. P. Bean, „Feine Part
