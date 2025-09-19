@@ -2,3 +2,5 @@
 *.out
 *.aux
 fig-eps-converted-to.pdf
+*.bbl
+*.blg
